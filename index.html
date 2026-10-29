@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071b16">
+<meta name="description" content="FootActu RDC : actualités football, transferts, résultats et Léopards de la RDC.">
+<title>FootActu RDC — L'actu football</title>
+<style>
+:root{--bg:#071b16;--panel:#102820;--panel2:#15362b;--green:#42e58b;--text:#f3fff8;--muted:#a7c4b4;--line:#26483b;--gold:#ffd166}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#071b16,#08130f 75%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:0 18px}
+header{position:sticky;top:0;z-index:10;background:#071b16ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.18rem;letter-spacing:-.4px}.ball{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:var(--green);color:#052015;font-size:22px}.brand span em{font-style:normal;color:var(--green)}.pill{border:1px solid #38765b;color:var(--green);padding:7px 11px;border-radius:999px;font-size:.8rem;font-weight:700}
+nav{display:flex;gap:8px;overflow:auto;padding:0 0 13px;scrollbar-width:none}nav button,.filters button{white-space:nowrap;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--muted);padding:9px 14px;cursor:pointer;font-weight:700}nav button.active,.filters button.active{background:var(--green);border-color:var(--green);color:#062116}
+.hero{padding:30px 0 22px;display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}.hero-copy{padding:28px;border-radius:24px;background:radial-gradient(circle at 90% 5%,#1d5a40 0,transparent 38%),linear-gradient(135deg,#123528,#0d241b);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;min-height:290px}.eyebrow{font-size:.76rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);font-weight:900}.hero h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.02;letter-spacing:-1.8px;margin:12px 0}.hero p{color:var(--muted);line-height:1.65;margin:0 0 22px}.cta{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:var(--green);color:#062116;font-weight:900;padding:12px 16px;border-radius:12px;border:0;cursor:pointer}
+.hero-visual{border:1px solid var(--line);border-radius:24px;min-height:290px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 38%,#317b50 0,#17462e 27%,#0b2419 65%)}.pitch{position:absolute;inset:10% 12%;border:2px solid #75d69a55;border-radius:8px}.pitch:before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:2px solid #75d69a55}.pitch:after{content:"";position:absolute;left:50%;top:50%;width:80px;height:80px;border:2px solid #75d69a55;border-radius:50%;transform:translate(-50%,-50%)}.bigball{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:95px;filter:drop-shadow(0 12px 12px #0008)}.visual-tag{position:absolute;left:18px;bottom:18px;background:#061910d9;border:1px solid #3d7256;padding:10px 13px;border-radius:12px;font-weight:800}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:20px 0 14px}.section-head h2{margin:0;font-size:1.5rem;letter-spacing:-.6px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:.9rem}.filters{display:flex;gap:8px;overflow:auto;margin:15px 0 18px}
+.searchbar{display:flex;gap:8px;margin:20px 0 12px}.searchbar input{min-width:0;flex:1;background:var(--panel);border:1px solid var(--line);border-radius:12px;color:var(--text);padding:13px 14px;font:inherit;outline:none}.searchbar input:focus{border-color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}.card:hover{transform:translateY(-3px);border-color:#438967}.thumb{height:150px;display:grid;place-items:center;font-size:58px;background:linear-gradient(135deg,#164b32,#0b2118);position:relative}.thumb:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#071b1677,transparent 65%)}.tag{position:absolute;left:12px;top:12px;z-index:1;background:var(--green);color:#052116;border-radius:7px;padding:5px 8px;font-size:.68rem;font-weight:900;text-transform:uppercase}.card-body{padding:15px;display:flex;flex-direction:column;flex:1}.meta{color:var(--muted);font-size:.76rem;display:flex;justify-content:space-between;gap:8px}.card h3{font-size:1.06rem;line-height:1.35;margin:10px 0}.card p{font-size:.88rem;line-height:1.55;color:var(--muted);margin:0 0 15px}.card-actions{margin-top:auto;display:flex;gap:8px}.read,.share{border:1px solid #3b6c53;background:transparent;color:var(--green);border-radius:9px;padding:9px 10px;font-weight:800;cursor:pointer}.read{background:#143d2b;flex:1}.share{font-size:1rem}.empty{grid-column:1/-1;padding:35px;text-align:center;color:var(--muted);background:var(--panel);border-radius:16px}
+.scoreboard{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.score{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:14px}.score small{color:var(--green);font-weight:900;text-transform:uppercase;font-size:.7rem}.score strong{display:block;margin:8px 0;font-size:1rem}.score p{color:var(--muted);font-size:.8rem;margin:0}
+.newsletter{margin:32px 0;padding:25px;border-radius:20px;border:1px solid #2b6548;background:linear-gradient(110deg,#103a28,#0b2018);display:flex;align-items:center;justify-content:space-between;gap:20px}.newsletter h2{margin:0 0 6px}.newsletter p{margin:0;color:var(--muted)}.newsletter .cta{white-space:nowrap}
+footer{border-top:1px solid var(--line);margin-top:35px;padding:24px 0 35px;color:var(--muted);font-size:.84rem;line-height:1.6}.footerrow{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.modal{position:fixed;inset:0;z-index:30;background:#000b;display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modalbox{max-width:680px;width:100%;max-height:85vh;overflow:auto;background:#0d241b;border:1px solid var(--line);border-radius:20px;padding:24px}.modalbox h2{line-height:1.25}.modalbox p{color:#c4d9cc;line-height:1.75}.close{float:right;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:7px 11px;cursor:pointer}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:20px}.hero-copy{min-height:unset;padding:23px}.hero-visual{min-height:210px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.thumb{height:120px}.scoreboard{grid-template-columns:1fr}.newsletter{align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){.wrap{padding:0 13px}.grid{grid-template-columns:1fr}.thumb{height:165px}.top{padding:11px 0}.pill{font-size:.7rem}.hero h1{font-size:2.3rem}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="top"><a class="brand" href="#"><span class="ball">⚽</span><span>FootActu <em>RDC</em></span></a><span class="pill">LE FOOT EN DIRECT</span></div>
+  <nav id="nav"><button class="active" data-cat="Tout">À la une</button><button data-cat="Transferts">Transferts</button><button data-cat="Real Madrid">Real Madrid</button><button data-cat="Barça">FC Barcelone</button><button data-cat="RDC">Léopards RDC</button><button data-cat="Débats">Débats</button></nav>
+</div></header>
+<main class="wrap">
+<section class="hero">
+  <div class="hero-copy"><span class="eyebrow">⚡ Le rendez-vous des passionnés</span><h1>Le football.<br><span style="color:var(--green)">Sans détour.</span></h1><p>Actus, transferts, résultats et débats : reste au courant de ce qui fait vibrer le monde du ballon rond.</p><button class="cta" onclick="document.querySelector('#actualites').scrollIntoView({behavior:'smooth'})">Explorer les actualités <span>→</span></button></div>
+  <div class="hero-visual" aria-label="Illustration terrain de football"><div class="pitch"></div><div class="bigball">⚽</div><div class="visual-tag">🇨🇩 Passion football en RDC</div></div>
+</section>
+<div class="section-head"><div><h2>Le fil de l’actualité</h2><p>Des infos à lire, partager et commenter.</p></div></div>
+<div class="searchbar"><input id="search" type="search" placeholder="Rechercher une équipe, un joueur, un sujet…"><button class="cta" id="searchBtn">Chercher</button></div>
+<div class="filters" id="filters"><button class="active" data-cat="Tout">Tout</button><button data-cat="Transferts">Transferts</button><button data-cat="Real Madrid">Real Madrid</button><button data-cat="Barça">FC Barcelone</button><button data-cat="RDC">Léopards RDC</button><button data-cat="Débats">Débats</button></div>
+<section id="actualites"><div class="grid" id="news"></div></section>
+<div class="section-head"><div><h2>Le coin des supporters</h2><p>Une zone de démonstration : ajoute les scores vérifiés avant publication.</p></div></div>
+<div class="scoreboard">
+ <div class="score"><small>Débat du jour</small><strong>Qui est le meilleur joueur du moment ?</strong><p>Partage ton avis dans les commentaires de nos publications.</p></div>
+ <div class="score"><small>Focus RDC 🇨🇩</small><strong>Les Léopards au centre de l’attention</strong><p>Actualités de la sélection nationale et de ses joueurs.</p></div>
+ <div class="score"><small>À retenir</small><strong>Vérifie toujours l’information</strong><p>Une rumeur de transfert n’est pas une annonce officielle.</p></div>
+</div>
+<section class="newsletter"><div><h2>La passion se partage ⚽</h2><p>Retrouve FootActu RDC sur tes réseaux et partage les articles.</p></div><a class="cta" href="https://www.tiktok.com/" target="_blank" rel="noopener">Voir TikTok ↗</a></section>
+</main>
+<footer><div class="wrap footerrow"><div><strong style="color:var(--text)">FootActu RDC</strong><br>Le football au cœur de l’actualité.</div><div>Prototype gratuit • Adapté au téléphone et au PC<br><span id="year"></span> FootActu RDC — Les actualités ci-dessous sont des exemples de démonstration.</div></div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="modalbox"><button class="close" id="close">Fermer ✕</button><div id="articleContent"></div></div></div>
+<script>
+const articles = [
+{cat:"Real Madrid",tag:"Real Madrid",emoji:"👑",date:"À vérifier avant publication",title:"Real Madrid : les questions que se posent les supporters",desc:"Renouvellements, forme des joueurs et prochains grands rendez-vous : prépare un point clair avec des informations confirmées.",body:"Les supporters du Real Madrid suivent de près les performances de l’équipe et les décisions du club. Avant de publier une information, vérifie sa date, sa source et si elle a été confirmée par le club ou par plusieurs médias fiables. Ajoute ici les détails vérifiés, puis invite les lecteurs à donner leur avis."},
+{cat:"Transferts",tag:"Mercato",emoji:"🔄",date:"Rubrique mercato",title:"Mercato : comment distinguer une rumeur d’un transfert officiel ?",desc:"Une méthode simple pour ne pas partager de fausses informations pendant la période des transferts.",body:"Une rumeur n’est pas une signature. Cherche une déclaration du club, du joueur ou de son représentant, et compare les informations de plusieurs médias reconnus. Indique clairement si le dossier est une rumeur, une négociation rapportée ou une annonce officielle."},
+{cat:"RDC",tag:"Léopards RDC",emoji:"🇨🇩",date:"Focus national",title:"Léopards : les nouvelles à suivre autour de la sélection",desc:"Résultats, convocations et performances des Congolais : un espace dédié aux fans de la RDC.",body:"Cette rubrique est consacrée à la sélection de la République démocratique du Congo et aux joueurs congolais. Ajoute les dernières nouvelles après vérification auprès de la fédération, des clubs ou de médias sportifs fiables."},
+{cat:"Barça",tag:"FC Barcelone",emoji:"🔵🔴",date:"Club",title:"FC Barcelone : les sujets qui font parler les supporters",desc:"Performances, jeunes talents et décisions tactiques : place au débat, sans transformer les opinions en faits.",body:"Le FC Barcelone suscite beaucoup de débats. Sépare les faits vérifiés de l’analyse personnelle et précise quand tu donnes ton opinion. Une bonne question aux lecteurs peut encourager une discussion respectueuse."},
+{cat:"Débats",tag:"Débat",emoji:"🎙️",date:"Question aux fans",title:"Débat : quel joueur mérite le plus d’éloges cette saison ?",desc:"Compare les performances, les statistiques et l’impact sur l’équipe avant de trancher.",body:"Le débat est ouvert : quel joueur a le plus marqué la saison selon toi ? Donne des arguments basés sur les performances et les statistiques. Évite les insultes : le but est de discuter football entre supporters."},
+{cat:"Transferts",tag:"Guide foot",emoji:"📰",date:"Conseil rédaction",title:"3 réflexes avant de publier une actualité football",desc:"Vérifie la source, la date et le contexte. La confiance des lecteurs est plus importante que la vitesse.",body:"1. Remonte à la source d’origine. 2. Vérifie la date et le contexte. 3. Cherche une confirmation indépendante. N’utilise pas de photos, vidéos ou textes protégés sans autorisation. Résume avec tes propres mots et cite les sources."
+}
+];
+let currentCat="Tout";
+const $=s=>document.querySelector(s);
+function render(){
+ const q=$("#search").value.trim().toLowerCase();
+ const filtered=articles.filter(a=>(currentCat==="Tout"||a.cat===currentCat)&&(`${a.title} ${a.desc} ${a.cat} ${a.tag}`).toLowerCase().includes(q));
+ $("#news").innerHTML=filtered.length?filtered.map((a,i)=>`<article class="card"><div class="thumb"><span class="tag">${a.tag}</span><span>${a.emoji}</span></div><div class="card-body"><div class="meta"><span>${a.cat}</span><span>Lecture 2 min</span></div><h3>${a.title}</h3><p>${a.desc}</p><div class="card-actions"><button class="read" data-read="${articles.indexOf(a)}">Lire l’article →</button><button class="share" title="Partager" data-share="${articles.indexOf(a)}">↗</button></div></div></article>`).join(""):`<div class="empty">Aucun article trouvé. Essaie un autre mot-clé.</div>`;
+}
+function setCat(cat){currentCat=cat;document.querySelectorAll("[data-cat]").forEach(b=>b.classList.toggle("active",b.dataset.cat===cat));render()}
+document.querySelectorAll("[data-cat]").forEach(b=>b.addEventListener("click",()=>setCat(b.dataset.cat)));
+$("#searchBtn").addEventListener("click",render);$("#search").addEventListener("input",render);
+$("#news").addEventListener("click",e=>{
+ const read=e.target.closest("[data-read]");const share=e.target.closest("[data-share]");
+ if(read){const a=articles[+read.dataset.read];$("#articleContent").innerHTML=`<span class="eyebrow">${a.tag}</span><h2>${a.title}</h2><p style="color:var(--muted);font-size:.85rem">${a.date}</p><p>${a.body}</p><p><strong>Note éditoriale :</strong> ce contenu est un modèle de démonstration. Remplace-le par une actualité récente, vérifiée et rédigée avec tes propres mots.</p><button class="cta" id="shareArticle">Partager l’article ↗</button>`;$("#modal").classList.add("open");$("#shareArticle").onclick=()=>shareText(a.title+" — FootActu RDC");}
+ if(share){shareText(articles[+share.dataset.share].title+" — FootActu RDC");}
+});
+function shareText(t){const url=location.href;const text=t+" "+url;if(navigator.share){navigator.share({title:"FootActu RDC",text,url}).catch(()=>{})}else if(navigator.clipboard){navigator.clipboard.writeText(text).then(()=>alert("Texte copié ! Tu peux le partager sur WhatsApp ou TikTok." )).catch(()=>prompt("Copie ce texte pour le partager :",text))}else{prompt("Copie ce texte pour le partager :",text)}}
+$("#close").onclick=()=>$("#modal").classList.remove("open");$("#modal").addEventListener("click",e=>{if(e.target.id==="modal")$("#modal").classList.remove("open")});
+$("#year").textContent=new Date().getFullYear();render();
+</script>
+</body>
+</html>
